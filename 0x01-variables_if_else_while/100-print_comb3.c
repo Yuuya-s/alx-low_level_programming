@@ -1,17 +1,25 @@
 #include <stdio.h>
 
+/**
+ * main - Entry point
+ *
+ * Description: Prints all possible different combinations of two digits.
+ * Numbers are separated by ", " and printed in ascending order.
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-    int i, j;
+    int tens, ones;
 
-    for (i = 0; i <= 8; i++)
+    for (tens = 0; tens <= 8; tens++)
     {
-        for (j = i + 1; j <= 9; j++)
+        for (ones = tens + 1; ones <= 9; ones++)
         {
-            putchar(i % 10 + '0');
-            putchar(j % 10 + '0');
+            putchar(tens % 10 + '0');
+            putchar(ones % 10 + '0');
 
-            if (i < 8 || j < 9)
+            if (tens != 8 || ones != 9)
             {
                 putchar(',');
                 putchar(' ');
@@ -21,6 +29,5 @@ int main(void)
 
     putchar('\n');
 
-    return (0);  
+    return (0);
 }
-
