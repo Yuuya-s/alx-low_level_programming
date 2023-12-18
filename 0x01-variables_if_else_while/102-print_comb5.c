@@ -3,33 +3,36 @@
 /**
  * main - Entry point
  *
- * Description: Prints all possible combinations of two two-digit numbers
- * from 00 to 99 in ascending order.
+ * Description: Prints all possible combinations of two two-digit numbers.
+ * Numbers are separated by ", " and printed in ascending order.
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int tens1, units1, tens2, units2;
+	int tens1, ones1, tens2, ones2;
 
 	for (tens1 = 0; tens1 <= 9; tens1++)
 	{
-		for (units1 = 0; units1 <= 9; units1++)
+		for (ones1 = 0; ones1 <= 9; ones1++)
 		{
-			for (tens2 = tens1; tens2 <= 9; tens2++)
+			for (tens2 = 0; tens2 <= 9; tens2++)
 			{
-				for (units2 = (tens2 == tens1) ? units1 + 1 : 0; units2 <= 9; units2++)
+				for (ones2 = 0; ones2 <= 9; ones2++)
 				{
-					putchar(tens1 % 10 + '0');
-					putchar(units1 % 10 + '0');
-					putchar(' ');
-					putchar(tens2 % 10 + '0');
-					putchar(units2 % 10 + '0');
-
-					if (!(tens1 == 9 && units1 == 8 && tens2 == 9 && units2 == 9))
+					if (tens1 * 10 + ones1 < tens2 * 10 + ones2)
 					{
-						putchar(',');
+						putchar(tens1 + '0');
+						putchar(ones1 + '0');
 						putchar(' ');
+						putchar(tens2 + '0');
+						putchar(ones2 + '0');
+
+						if (tens1 != 9 || ones1 != 8 || tens2 != 9 || ones2 != 9)
+						{
+							putchar(',');
+							putchar(' ');
+						}
 					}
 				}
 			}
@@ -38,6 +41,6 @@ int main(void)
 
 	putchar('\n');
 
-	return 0;
+	return (0);
 }
 
