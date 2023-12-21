@@ -1,22 +1,31 @@
+/*
+ * File: 2-print_square.c
+ * Author: Yuuya-s
+ */
 #include "main.h"
 
 /**
- * print_square.
- * @size of the square.
- * No return.
+ * print_square - prints a square, followed by a new line.
+ * @size: The size of the square.
  */
 void print_square(int size)
 {
-	int i, j;
+    if (size <= 0)
+    {
+        _putchar('\n');
+    }
+    else
+    {
+        int i, j;
 
-	for (i = 0; i < size; i++)
-	{
-		for (j = 0; j < size; j++)
-		{
-			_putchar(45);
-		}
-		if (i != size - 1)
-			_putchar('\n');
-	}
-	_putchar('\n');
+        for (i = 0; i < size; i++)
+        {
+            for (j = 0; j < size; j++)
+            {
+                _putchar('#');
+            }
+            _putchar('\n');
+        }
+    }
 }
+
