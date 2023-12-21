@@ -9,7 +9,7 @@ long largest_prime_factor(long n)
 {
     long i;
 
-    for (i = 2; i <= n; i++)
+    for (i = 2; i * i <= n; i++)
     {
         while (n % i == 0)
         {
@@ -19,7 +19,7 @@ long largest_prime_factor(long n)
         }
     }
 
-    return 0;
+    return n; // This handles the case when the remaining value is a prime number
 }
 
 int main(void)
