@@ -1,6 +1,6 @@
 /*
  * File: 0-isupper.c
- * Author: x-poison
+ * Author: Yuuya-s
  */
 #include "main.h"
 
