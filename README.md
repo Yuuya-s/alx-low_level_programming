@@ -1,4 +1,4 @@
-**Hello My Name is Abdulrahman THIS REPOSITORY FOR LOW LWVWL PROGRAMMING**
+**Hello My Name is Abdirizak THIS REPOSITORY FOR LOW LWVWL PROGRAMMING**
 
 ```markdown
 # Alx Low level programming 
@@ -23,7 +23,7 @@ Provide examples and explanations on how to use the various features and files i
 
 ## Contributing
 
-Abdulrahman is the owner of this project 
+Abdirizak is the owner of this project 
 
 ## License
 
