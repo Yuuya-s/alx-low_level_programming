@@ -3,30 +3,28 @@
 #include <time.h>
 
 /**
- * generate_password - Generates a random password for 101-crackme.
- * 
- * Return: A pointer to the generated password.
+ * main - Generates random valid passwords for 101-crackme.
+ * Return: 0 on success.
  */
-char *generate_password(void)
-{
-    static char password[7]; // Assuming a 6-character password plus null terminator
-    
-    srand(time(NULL));
-
-    for (int i = 0; i < 6; ++i) {
-        password[i] = rand() % 94 + 33; // ASCII characters between '!' (33) and '~' (126)
-    }
-
-    password[6] = '\0'; // Null-terminate the password
-
-    return password;
-}
-
 int main(void)
 {
-    char *password = generate_password();
+    srand(time(NULL));  // Seed for random number generation based on current time
 
-    printf("Generated Password: %s\n", password);
+    // Define the character set for the password
+    char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    int password_length = 12;  // Adjust the length as needed
+
+    printf("Generated Password: ");
+
+    // Generate random password
+    for (int i = 0; i < password_length; ++i) {
+        // Generate a random index within the character set
+        int random_index = rand() % (sizeof(charset) - 1);
+        // Print the character at the random index
+        printf("%c", charset[random_index]);
+    }
+
+    printf("\n");
 
     return 0;
 }
